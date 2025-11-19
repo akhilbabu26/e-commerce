@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field, Form, Formik } from 'formik'
-import { Validation } from './Validation'
-import { api } from './Api'
+import { Validation } from './RegValidation'
+import { api } from '../../Api/Api'
 import { Link, useNavigate } from 'react-router-dom'
 
 const formValues = {
