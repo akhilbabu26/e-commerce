@@ -53,7 +53,13 @@ function FourCard() {
           <ProductCard key={product.id}  product={product} />
           ))}
         </div>
-       <button onClick={()=> navigate(`/allshoe/${items}`)}>Veiw</button>
+        <button 
+          className="px-4 m-2 py-2 bg-black text-white rounded-md hover:bg-gray-900 transition"
+          onClick={() => navigate(`/allshoe/${items}`)}
+        >
+          View
+        </button>
+
       </div>
     </div>
   )

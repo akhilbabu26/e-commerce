@@ -3,6 +3,7 @@ import React, { useContext } from "react"
 import { LogValidation } from "./LogValidation"
 import {Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../Context/AuthContext"
+import { all } from "axios"
 
 
 const values = {
@@ -14,17 +15,27 @@ const values = {
 export default function Login() {
 
   const {allUsers, setCurrentUser} = useContext(AuthContext)
+  console.log(allUsers)
 
   const navigate = useNavigate()
 
-    const click = (values)=>{
+  const click = (values)=>{
         
-    const isExist = allUsers.find(x => x.email === values.email && x.password === values.password)
+    const isExist = allUsers?.find(x => x?.email === values?.email && x?.password === values?.password)
+      
+     // Admin side
+      if(isExist?.role === "Admin"){
+        setCurrentUser(isExist)
+        localStorage.setItem("user", JSON.stringify(isExist))
+        navigate("/admin")
+        return
+      }
 
+     // user side
       if(isExist){
         setCurrentUser(isExist)
         localStorage.setItem("user",JSON.stringify(isExist))
-        navigate("/home")
+        navigate("/")
         
       }
     }
@@ -74,11 +85,11 @@ export default function Login() {
                             <label htmlFor="password" className="block text-sm/6 font-medium text-gray-900">
                             Password
                             </label>
-                            <div className="text-sm">
+                            {/* <div className="text-sm">
                                 <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
                                     Forgot password?
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="mt-2">
                             <Field
@@ -97,7 +108,7 @@ export default function Login() {
                             type="submit"
                             className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         >
-                            Sign in
+                            Login in
                         </button>
                     </div>
             </Form>
@@ -109,7 +120,7 @@ export default function Login() {
 
           <p className="mt-10 text-center text-sm/6 text-gray-500">
             If your not a member?{' '}
-            <Link to="/" className="font-semibold text-indigo-600 hover:text-indigo-500">
+            <Link to="/register" className="font-semibold text-indigo-600 hover:text-indigo-500">
               Sign up
             </Link>
           </p>

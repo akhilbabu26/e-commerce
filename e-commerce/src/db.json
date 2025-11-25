@@ -1,46 +1,26 @@
 {
   "users": [
     {
-      "id": "0393",
-      "name": "ajgkfgjl",
+      "id": "d0f8",
+      "name": "akhil",
+      "email": "akhil2672001@gmail.com",
+      "password": "123456",
+      "cPassword": "123456",
+      "role": "Admin",
+      "cart": []
+    },
+    {
+      "id": "47b7",
+      "name": "akhil",
       "email": "fake@gmail.com",
       "password": "123456",
       "cPassword": "123456",
       "role": "User",
       "isBlocked": false,
-      "cart": [
-        {
-          "product_id": "ADIDAS001",
-          "name": "SL 72 RS Shoes - Black",
-          "type": "Casual Retro Runner",
-          "color": "Black/White",
-          "original_price": 8999,
-          "sale_price": 7649,
-          "discount_percentage": 15,
-          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9b4b896bbb8f4c00a35714ae1a51e3b8_9366/SL_72_RS_Shoes_Black_JS3994_09_standard.jpg",
-          "description": "A faithful re-release of the classic 70s runner. Experience lightweight comfort and vintage style with a modern fit.",
-          "id": "adid_001",
-          "cost_price": 4500,
-          "isActive": true
-        },
-        {
-          "product_id": "ADIDAS002",
-          "name": "SL 72 RS Shoes - Brown Suede",
-          "type": "Casual Retro Runner",
-          "color": "Brown/Beige",
-          "original_price": 8999,
-          "sale_price": 7199,
-          "discount_percentage": 20,
-          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3825f6aac1cd4b93b0553c90131f94c6_9366/SL_72_RS_Shoes_Brown_JS0744_09_standard.jpg",
-          "description": "The iconic SL 72 silhouette updated with premium brown suede and classic gum sole for a timeless look.",
-          "id": "adid_002",
-          "cost_price": 4500,
-          "isActive": true
-        }
-      ],
+      "cart": [],
       "order": [],
       "wishlist": [],
-      "create_at": "2025-11-17T03:54:50.871Z"
+      "create_at": "2025-11-24T05:51:22.092Z"
     }
   ],
   "products": [
@@ -56,7 +36,8 @@
       "description": "A faithful re-release of the classic 70s runner. Experience lightweight comfort and vintage style with a modern fit.",
       "id": "adid_001",
       "cost_price": 4500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS002",
@@ -70,7 +51,8 @@
       "description": "The iconic SL 72 silhouette updated with premium brown suede and classic gum sole for a timeless look.",
       "id": "adid_002",
       "cost_price": 4500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS003",
@@ -84,7 +66,8 @@
       "description": "Inspired by classic tennis styles, these shoes offer a comfortable fit for everyday wear. Features blue accents.",
       "id": "adid_003",
       "cost_price": 3000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS004",
@@ -98,7 +81,8 @@
       "description": "The updated Grand Court with Cloudfoam cushioning for superior comfort. A clean, white canvas for any outfit.",
       "id": "adid_004",
       "cost_price": 3250,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS005",
@@ -112,7 +96,8 @@
       "description": "Nostalgic Y2K aesthetic meets modern skate sensibility in this chunky, green suede update of the Campus.",
       "id": "adid_005",
       "cost_price": 5000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS006",
@@ -126,7 +111,8 @@
       "description": "Bold orange suede brings the early 2000s vibe to the streets. Features signature oversized laces and thick sole.",
       "id": "adid_006",
       "cost_price": 5000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS007",
@@ -140,7 +126,8 @@
       "description": "The Campus 00s in a versatile brown suede, perfect for a casual, retro-inspired wardrobe.",
       "id": "adid_007",
       "cost_price": 5000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS008",
@@ -154,7 +141,8 @@
       "description": "Clean, everyday style with a tennis heritage. Features a smooth synthetic upper and signature three-stripe perforations.",
       "id": "adid_008",
       "cost_price": 2750,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS009",
@@ -168,7 +156,8 @@
       "description": "The original Samba in its classic colorway. Timeless indoor football design embraced as a global lifestyle icon.",
       "id": "adid_009",
       "cost_price": 5000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "ADIDAS010",
@@ -182,7 +171,8 @@
       "description": "The legendary Samba in a crisp white leather with black accents. Versatile and forever in style.",
       "id": "adid_010",
       "cost_price": 5000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE001",
@@ -196,7 +186,8 @@
       "description": "The undisputed icon, the AF1 '07 LV8 elevates the classic with fresh colors and premium detailing. Built with Air cushioning.",
       "id": "nike_001",
       "cost_price": 4850,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE002",
@@ -210,7 +201,8 @@
       "description": "Performance skateboarding shoe engineered for durability and boardfeel. The PS8 offers responsive cushioning.",
       "id": "nike_002",
       "cost_price": 4500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE003",
@@ -224,7 +216,8 @@
       "description": "Elevated indoor football shoe designed for grip and control on court. The Gato LV8 provides a locked-in fit.",
       "id": "nike_003",
       "cost_price": 3500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE004",
@@ -238,7 +231,8 @@
       "description": "Women's premium running shoe with maximum cushioning for long distances. Delivers a soft, smooth ride.",
       "id": "nike_004",
       "cost_price": 7500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE005",
@@ -252,7 +246,8 @@
       "description": "Classic, low-profile indoor court shoe. The Gato is durable and perfect for street-to-court transitions.",
       "id": "nike_005",
       "cost_price": 3250,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE006",
@@ -266,7 +261,8 @@
       "description": "Durable and flexible Gato in a stealthy black colorway, built for high-performance indoor games.",
       "id": "nike_006",
       "cost_price": 3250,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE007",
@@ -280,7 +276,8 @@
       "description": "The timeless Dunk Low Retro, a staple in sneaker culture. Features classic 80s basketball styling in a green and white mix.",
       "id": "nike_007",
       "cost_price": 4500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE008",
@@ -294,7 +291,8 @@
       "description": "The popular Zoom Vomero 5 in a Special Edition colorway, combining mesh and TecTuff overlays for a retro-tech look.",
       "id": "nike_008",
       "cost_price": 6500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE009",
@@ -308,7 +306,8 @@
       "description": "Women's Zoom Vomero 5 with a focus on comfort and vintage running aesthetics. Neutral tones for versatility.",
       "id": "nike_009",
       "cost_price": 6500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NIKE010",
@@ -322,7 +321,8 @@
       "description": "Dunk Low in a Special Edition finish, featuring a clean blue and white upper and a durable gum rubber outsole.",
       "id": "nike_010",
       "cost_price": 5000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA001",
@@ -336,7 +336,8 @@
       "description": "PUMA's flagship running shoe featuring full-length NITROFOAM™ for high cushioning, responsiveness, and reduced weight.",
       "id": "puma_001",
       "cost_price": 5500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA002",
@@ -350,7 +351,8 @@
       "description": "The original motorsport sneaker. Low-profile design, suede upper, and rounded heel for a legendary racing look.",
       "id": "puma_002",
       "cost_price": 3500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA003",
@@ -364,7 +366,8 @@
       "description": "Lightweight and versatile running shoe, engineered for agility and responsive ground contact during everyday runs.",
       "id": "puma_003",
       "cost_price": 4000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA004",
@@ -378,7 +381,8 @@
       "description": "Clean, court-inspired sneaker with a soft synthetic upper. A minimalist design for effortless street style.",
       "id": "puma_004",
       "cost_price": 2750,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA005",
@@ -392,7 +396,8 @@
       "description": "A throwback design with a wavy midsole and chunky silhouette. Bold color blocking for a distinct 90s feel.",
       "id": "puma_005",
       "cost_price": 3750,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA006",
@@ -406,7 +411,8 @@
       "description": "Engineered for maximum comfort with a dual-density NITROFOAM™ midsole, ideal for long runs and recovery.",
       "id": "puma_006",
       "cost_price": 6500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA007",
@@ -420,7 +426,8 @@
       "description": "A versatile black court sneaker with subtle white accents. Durable rubber outsole for traction and longevity.",
       "id": "puma_007",
       "cost_price": 2750,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA008",
@@ -434,7 +441,8 @@
       "description": "High-performance basketball shoe with NITROFOAM™ for explosive take-offs and cushioned landings on the court.",
       "id": "puma_008",
       "cost_price": 6000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA009",
@@ -448,7 +456,8 @@
       "description": "Classic black suede Speedcat, a sleek and race-ready look for everyday wear. Low profile and comfortable.",
       "id": "puma_009",
       "cost_price": 3500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "PUMA010",
@@ -462,7 +471,8 @@
       "description": "A modern take on a mid-cut court shoe, blending vintage basketball DNA with future-forward design elements.",
       "id": "puma_010",
       "cost_price": 3000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK001",
@@ -476,7 +486,8 @@
       "description": "An all-time classic. Soft garment leather upper and a die-cut EVA midsole for lightweight cushioning and an iconic look.",
       "id": "rbk_001",
       "cost_price": 3500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK002",
@@ -490,7 +501,8 @@
       "description": "The quintessential Club C 85 with a retro 'Chalk' upper and vintage-style green detailing for a timeless, court-ready feel.",
       "id": "rbk_002",
       "cost_price": 4000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK003",
@@ -504,7 +516,8 @@
       "description": "The latest evolution of the Nano, built for performance and stability across all WODs and training routines.",
       "id": "rbk_003",
       "cost_price": 6500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK004",
@@ -518,7 +531,8 @@
       "description": "Futuristic design meets functional cushioning with the Zig Energy Shell midsole. Provides energy return and a bold look.",
       "id": "rbk_004",
       "cost_price": 5000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK005",
@@ -532,7 +546,8 @@
       "description": "Bold, laceless design with 'The Pump' technology for a custom fit. A true 90s icon in a vibrant colorway.",
       "id": "rbk_005",
       "cost_price": 7500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK006",
@@ -546,7 +561,8 @@
       "description": "The Classic Leather in a sleek all-black finish. Durable leather upper and high-abrasion rubber outsole.",
       "id": "rbk_006",
       "cost_price": 3500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK007",
@@ -560,7 +576,8 @@
       "description": "Crisp white upper with contrasting blue accents. The court classic that provides low-key, comfortable style.",
       "id": "rbk_007",
       "cost_price": 4000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK008",
@@ -574,7 +591,8 @@
       "description": "Signature split sole and inflatable Pump cage for a distinctive, lightweight design. A modern take on a vintage colorway.",
       "id": "rbk_008",
       "cost_price": 7500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK009",
@@ -588,7 +606,8 @@
       "description": "An everyday essential with a clean, low-cut design and cushioned midsole for all-day wearability.",
       "id": "rbk_009",
       "cost_price": 2500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "REEBOK010",
@@ -602,7 +621,8 @@
       "description": "A dynamic remix of the Classic Leather, combining the heritage upper with a chunky, sculpted midsole for a modern edge.",
       "id": "rbk_010",
       "cost_price": 3750,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB001",
@@ -616,7 +636,8 @@
       "description": "A clean, color-blocked lifestyle sneaker with a low profile, offering throwback New Balance style.",
       "id": "nb_001",
       "cost_price": 4500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB002",
@@ -630,7 +651,8 @@
       "description": "Lightweight and propulsive, featuring Fresh Foam X for superior cushioning and a fast ride.",
       "id": "nb_002",
       "cost_price": 6500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB003",
@@ -644,7 +666,8 @@
       "description": "Built for the outdoors, the Hierro V9 offers supreme cushioning and a Vibram® sole for rugged terrain.",
       "id": "nb_003",
       "cost_price": 7000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB004",
@@ -658,7 +681,8 @@
       "description": "Blending 2000s running style with modern comfort. Features ABZORB and N-ergy cushioning for stability.",
       "id": "nb_004",
       "cost_price": 6000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB005",
@@ -672,7 +696,8 @@
       "description": "A remastered 2000s design with a futuristic aesthetic. Features a sleek silhouette and breathable mesh upper.",
       "id": "nb_005",
       "cost_price": 5500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB006",
@@ -686,7 +711,8 @@
       "description": "Features the signature 'Protection Pack' deconstructed look on the 1906R model for a unique, rugged aesthetic.",
       "id": "nb_006",
       "cost_price": 6500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB007",
@@ -700,7 +726,8 @@
       "description": "Part of the iconic 990 series, this v6 model offers high-quality craftsmanship, comfort, and the FuelCell midsole technology.",
       "id": "nb_007",
       "cost_price": 10000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB008",
@@ -714,7 +741,8 @@
       "description": "Handcrafted quality and superior comfort in a versatile navy colorway. A symbol of quality and enduring style.",
       "id": "nb_008",
       "cost_price": 10000,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB009",
@@ -728,7 +756,8 @@
       "description": "A lifestyle shoe that takes cues from early-2000s running. Features a lightweight, breathable build in classic tones.",
       "id": "nb_009",
       "cost_price": 4500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     },
     {
       "product_id": "NB010",
@@ -742,7 +771,8 @@
       "description": "The bold silhouette of the 1000 is highlighted with vibrant green accents. A statement piece that is comfortable for daily wear.",
       "id": "nb_010",
       "cost_price": 5500,
-      "isActive": true
+      "isActive": true,
+      "quantity": 1
     }
   ]
 }
