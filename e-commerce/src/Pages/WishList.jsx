@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import { api } from "../Api/Api";
 import { AuthContext } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function WishList() {
   const [reload, setReload] = useState(false)
@@ -15,7 +16,7 @@ function WishList() {
   const removeFromWishlist = async (product_id) => {
     try {
       if (!currentUserdata) {
-        alert("User data not found")
+        toast.error("User data not found")
         return;
       }
 
@@ -36,8 +37,7 @@ function WishList() {
       setReload((prev) => !prev)
       
     } catch (err) {
-      console.log(err);
-      alert("Error removing item from wishlist")
+      toast.error("Error removing item from wishlist")
     }
   };
 
@@ -45,7 +45,7 @@ function WishList() {
 
     try {
       if (!currentUserdata) {
-        alert("User data not found");
+        toast.error("User data not found")
         return;
       }
 
@@ -81,14 +81,13 @@ function WishList() {
       setReload((prev) => !prev);
       
       if (isInCart) {
-        alert("Product is already in your cart");
+        toast.success("Product is already in your cart");
       } else {
-        alert("Product moved to cart!");
+        toast.success("Product moved to cart!");
       }
       
     } catch (err) {
-      console.log(err);
-      alert("Error moving product to cart");
+      toast.error("Error moving product to cart");
     }
   };
 
@@ -117,15 +116,15 @@ function WishList() {
 
   return (
     <div className="max-w-7xl mx-auto p-4">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">My Wishlist</h1>
+      {/* <div className="flex justify-between items-center mb-6">
+        <h1 className="text-2xl font-bold text-gray-900 " >My Wishlist</h1>
         <button
           onClick={() => navigate("/")}
           className="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-300 transition"
         >
           Continue Shopping
         </button>
-      </div>
+      </div> */}
 
       {currentUserdata?.wishlist?.length === 0 ? (
         <div className="text-center py-12">

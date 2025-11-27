@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import CartProvider from './Context/CartContext'
 import AuthProvider from './Context/AuthContext.jsx'
+import { Toaster } from 'react-hot-toast'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -12,6 +13,7 @@ createRoot(document.getElementById('root')).render(
       <AuthProvider> 
         <CartProvider>     
           <App />
+          <Toaster position="top-right" reverseOrder={false} />
         </CartProvider>
       </AuthProvider>
     </StrictMode>

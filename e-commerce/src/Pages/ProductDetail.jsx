@@ -5,6 +5,7 @@ import { AuthContext } from '../Context/AuthContext';
 import { CartContext } from '../Context/CartContext';
 import { api } from '../Api/Api';
 import Navbar from '../NavSections/NavBar/Navbar';
+import toast from 'react-hot-toast';
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -30,7 +31,7 @@ function ProductDetail() {
   if (loading) {
     return (
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="max-w-7xl mx-auto p-4 text-center py-12">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-200 rounded w-1/4 mx-auto mb-4"></div>
@@ -45,7 +46,7 @@ function ProductDetail() {
   if (!product) {
     return (
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="max-w-7xl mx-auto p-4 text-center py-12">
           <h2 className="text-2xl font-bold mb-4">Product Not Found</h2>
           <button onClick={() => navigate("/")} className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700">
@@ -61,7 +62,7 @@ function ProductDetail() {
 
   const addToCart = () => {
     if (!currentUser) {
-      alert("Please login to add items to cart");
+      toast.error("Please login to add items to cart");
       navigate("/login");
       return;
     }
@@ -73,12 +74,12 @@ function ProductDetail() {
 
     const productWithQuantity = { ...product, quantity };
     setCart(prev => [...prev, productWithQuantity]);
-    alert("Product added to cart!");
+    toast.success("Product added to cart!");
   };
 
   const toggleWishlist = async () => {
     if (!currentUser) {
-      alert("Please login to manage wishlist");
+      toast.error("Please login to manage wishlist");
       navigate("/login");
       return;
     }
@@ -92,6 +93,9 @@ function ProductDetail() {
         ? oldWishlist.filter(item => item.product_id !== productId)
         : [...oldWishlist, product];
 
+        if(!exists)toast.success(`Added to Wishlist 💖`)
+        if(exists)toast.error(`Removed to Wishlist 💖`)
+
       const updated = await api.patch(`/users/${user.id}`, { wishlist: newWishlist });
       localStorage.setItem("user", JSON.stringify(updated.data));
       setIsWishlisted(!exists);
@@ -102,7 +106,7 @@ function ProductDetail() {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       
       <div className="max-w-7xl mx-auto p-4">
         <nav className="flex mb-6 text-sm">

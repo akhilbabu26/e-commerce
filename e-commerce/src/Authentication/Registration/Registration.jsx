@@ -3,6 +3,8 @@ import { Field, Form, Formik } from 'formik'
 import { Validation } from './RegValidation'
 import { api } from '../../Api/Api'
 import { Link, useNavigate } from 'react-router-dom'
+import toast from "react-hot-toast";
+
 
 const formValues = {
     name: "",
@@ -39,7 +41,8 @@ export default function Example() {
             }
 
             await api.post("/users",data)
-            alert("Registration Successful")
+            toast.success("Registration Successful")
+            // alert()
             navigate("/login")
         }
         catch(err){

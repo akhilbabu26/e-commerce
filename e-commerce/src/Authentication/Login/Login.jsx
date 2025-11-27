@@ -3,7 +3,8 @@ import React, { useContext } from "react"
 import { LogValidation } from "./LogValidation"
 import {Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../../Context/AuthContext"
-import { all } from "axios"
+import toast from "react-hot-toast";
+
 
 
 const values = {
@@ -27,14 +28,21 @@ export default function Login() {
       if(isExist?.role === "Admin"){
         setCurrentUser(isExist)
         localStorage.setItem("user", JSON.stringify(isExist))
+         toast.success(`Welcome ${isExist.name}`)
         navigate("/admin")
         return
+      }
+
+      // Role blocked true
+      if(isExist?.isBlocked === true){
+        return toast.error("You are blocked!") //alert("You are blocked")
       }
 
      // user side
       if(isExist){
         setCurrentUser(isExist)
         localStorage.setItem("user",JSON.stringify(isExist))
+        toast.success(`Welcome ${isExist.name}`)
         navigate("/")
         
       }

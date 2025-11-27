@@ -1,35 +1,42 @@
-
 import { useState } from "react";
+import React from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, Home, Users, Package, ShoppingCart, LogOut, Bell, Cigarette } from "lucide-react";
+import { Menu, X, Home, Users, Package, ShoppingCart, LogOut } from "lucide-react";
 import logo from "../assets/unnamed.jpg"; 
 import useFetch from "../hooks/useFetch";
 
-
-export default function AdminPage() {
+function AdminPage() {
   const [sidebarOpen, setSidebarOpen] = useState(true) 
   const location = useLocation()
   const navigate = useNavigate()
-  const datas =  JSON.parse(localStorage.getItem('user'))
+  const datas = JSON.parse(localStorage.getItem('user'))
 
   // all users
   const {data} = useFetch("/users")
-  const userData = data?.filter(user=> user?.role !== "Admin")
-
-  console.log(userData)
+  const userData = data?.filter(user => user?.role !== "Admin")
 
   const navItems = [
-    { icon: Home, label: "Dashboard", path: "" },
-    { icon: Users, label: "Users", path: "" },
-    { icon: Package, label: "Products", path: "" },
-    { icon: ShoppingCart, label: "Orders", path: "" },
+    { icon: Home, label: "Dashboard", path: "dashboard" },
+    { icon: Users, label: "Users", path: "userinfo" },
+    { icon: Package, label: "Products", path: "productInfo" },
+    { icon: ShoppingCart, label: "Orders", path: "orderInfo" },
   ]
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path) => location.pathname.includes(path)
 
   const handleLogout = () => {
-    console.log("Logout clicked")
-    // Add logout logic here
+    // Clear user data from localStorage
+    localStorage.removeItem("user")
+    
+    // Clear any other related data
+    localStorage.removeItem("cart")
+    localStorage.removeItem("wishlist")
+    
+    // Redirect to login page
+    navigate("/login")
+    
+    // Optional: Show confirmation message
+    console.log("Admin logged out successfully")
   }
 
   const currentPage = navItems.find(item => isActive(item.path))?.label || "Dashboard"
@@ -39,7 +46,7 @@ export default function AdminPage() {
       {/* Sidebar - Deep Charcoal/Black */}
       <aside
         className={`${
-          sidebarOpen ? "w-64" : "w-20" // Slightly narrower for a sleeker look
+          sidebarOpen ? "w-64" : "w-20"
         } bg-gray-950 text-white transition-all duration-300 flex flex-col border-r border-gray-800 shadow-xl z-20`}
       >
         {/* Header - Branding Area */}
@@ -54,20 +61,14 @@ export default function AdminPage() {
                 />
                 <div 
                   className="cursor-pointer"
-                  onClick={() => navigate("/")}
                 >
-                 
-                  <h2
-                    className="text-xl font-bold text-white tracking-wider"
-                    onClick={() => navigate("/")}
-                    >
+                  <h2 className="text-xl font-bold text-white tracking-wider">
                     MULTI<span className="text-gray-400">BRAND</span>
                   </h2>
-
-                  <p className="text-xs text-gray-400 font-normal">ADMIN SUITE</p> 
+                  <p className="text-xs text-gray-400 font-normal">ADMIN SIDE</p> 
                 </div>
               </div>
-            ) } 
+            )} 
           </div>
           {/* Toggle Button */}
           <button
@@ -88,15 +89,14 @@ export default function AdminPage() {
               <div
                 key={index}
                 onClick={() => navigate(item.path)}
-                // Active link: Deep Emerald Green, subtle hover
                 className={`flex items-center gap-3 p-3 rounded-lg cursor-pointer transition-colors duration-150 ${
                   active
-                    ? "bg-emerald-600 text-white font-semibold shadow-md shadow-emerald-600/30"
+                    ? "bg-gray-600 text-white font-semibold shadow-md shadow-emerald-600/30"
                     : "text-gray-300 hover:bg-gray-800 hover:text-white"
                 }`}
               >
                 <Icon size={20} />
-                {sidebarOpen && <span className="text-sm">{item.label}</span>}
+                {sidebarOpen && <span className="text-lg">{item.label}</span>}
               </div>
             )
           })}
@@ -123,19 +123,17 @@ export default function AdminPage() {
           </h2>
           
           <div className="flex items-center gap-5">
-           
-            
             {/* Admin Profile */}
             <div className="flex items-center gap-2 cursor-pointer">
                 <span className="text-sm text-gray-700 font-medium hidden sm:block">
-                  Welcome Admin <strong>{datas.name}</strong>
+                  Welcome Admin <strong>{datas?.name}</strong>
                 </span>
                 <div className="w-9 h-9 bg-gray-200 rounded-full flex items-center justify-center overflow-hidden border border-gray-300">
-                <img 
+                  <img 
                     src={logo}
                     alt="Admin" 
                     className="w-full h-full object-cover"
-                />
+                  />
                 </div>
             </div>
           </div>
@@ -145,7 +143,6 @@ export default function AdminPage() {
         <div className="flex-1 p-6 overflow-auto">
           <div className="bg-white border border-gray-200 rounded-xl min-h-full p-6 shadow-lg"> 
             <Outlet />
-            
           </div>
         </div>
       </main>
@@ -153,4 +150,4 @@ export default function AdminPage() {
   )
 }
 
-
+export default React.memo(AdminPage)

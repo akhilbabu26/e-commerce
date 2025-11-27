@@ -3,12 +3,13 @@ import useFetch from "../hooks/useFetch";
 import { api } from "../Api/Api";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
 
 function CartPage() {
   const [currentUser, setCurrentUser] = useState()
   const [reload, setReload] = useState(false) 
   const navigate = useNavigate()
-  const { data } = useFetch("/users", reload)
+  const { data, loading } = useFetch("/users", reload)
   const { setCurrentUser: setAuthUser } = useContext(AuthContext)
 
   useEffect(() => {
@@ -16,7 +17,16 @@ function CartPage() {
     setCurrentUser(storedUser)
   }, [])
 
-  const currentUserdata = data.find((val) => val.email === currentUser?.email)
+  const currentUserdata = data?.find((val) => val.email === currentUser?.email)
+
+   //  Prevent rendering 
+  if (loading || !currentUserdata) {
+    return (
+      <div className="min-h-screen flex justify-center items-center">
+        <p className="text-gray-600 text-lg">Loading cart...</p>
+      </div>
+    );
+  }
 
   // Remove item from cart
   const remove = async (product_id) => {
@@ -35,10 +45,10 @@ function CartPage() {
       setAuthUser(updatedUser)
 
       setReload((prev) => !prev)
-      alert("Removed from cart")
+      toast.success("Removed from cart")
     } catch (err) {
       console.log(err)
-      alert("not removing item")
+      toast.error("not removing item")
     }
   }
 
@@ -70,7 +80,7 @@ function CartPage() {
 
   return (
     <div className="min-h-screen flex flex-col max-w-7xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-6">Your Cart</h1>
+      {/* <h1 className="text-2xl font-bold mb-6">Your Cart</h1> */}
 
       {/* CART ITEMS */}
       <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

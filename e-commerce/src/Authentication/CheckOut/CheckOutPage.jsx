@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import { AuthContext } from "../../Context/AuthContext";
 import { api } from "../../Api/Api";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const checkValues = {
   name: "",
@@ -65,12 +66,12 @@ function CheckOutPage() {
       localStorage.setItem("user", JSON.stringify(updatedUser))
       setCurrentUser(updatedUser)
 
-      console.log("Order placed successfully:", orderData)
+      toast.success("Order placed successfully:")
       navigate("/OrderPage")
 
     } catch (err) {
       console.error("Order failed:", err)
-      alert(`Failed to place order: ${err.message}`)
+      toast.error(`Failed to place order`)
     } finally {
       setIsSubmitting(false)
     }

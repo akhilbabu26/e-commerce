@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import { api } from '../Api/Api';
-import Navbar from '../NavSections/NavBar/Navbar';
 
 function OrdersPage() {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
@@ -14,7 +13,12 @@ function OrdersPage() {
     if (!window.confirm("Are you sure you want to cancel this order?")) return;
 
     try {
-      const updatedOrders = currentUser.order.filter(order => order.orderId !== orderId);
+      // Update the order status to 'cancelled' instead of removing it
+      const updatedOrders = currentUser.order.map(order => 
+        order.orderId === orderId 
+          ? { ...order, status: 'cancelled' }
+          : order
+      );
 
       await api.patch(`/users/${currentUser.id}`, { order: updatedOrders });
 
@@ -23,19 +27,26 @@ function OrdersPage() {
       localStorage.setItem("user", JSON.stringify(updatedUser));
       setCurrentUser(updatedUser);
 
-      alert("Order cancelled successfully!");
+      toast.success("Order cancelled successfully!")
     } catch (err) {
       console.error("Failed to cancel order:", err);
       alert("Failed to cancel order. Please try again.");
     }
   };
 
+  const getStatusColor = (status) => {
+    switch (status) {
+      case 'confirmed': return 'bg-green-100 text-green-800';
+      case 'shipped': return 'bg-blue-100 text-blue-800';
+      case 'delivered': return 'bg-purple-100 text-purple-800';
+      case 'cancelled': return 'bg-red-100 text-red-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
+
   return (
     <div>
-      <Navbar />
       <div className="max-w-4xl mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-6">My Orders</h1>
-        
         {orders.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-gray-600 mb-4">No orders found</p>
@@ -57,12 +68,8 @@ function OrdersPage() {
                       {new Date(order.orderDate).toLocaleDateString()}
                     </p>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-sm ${
-                    order.status === 'confirmed' ? 'bg-green-100 text-green-800' :
-                    order.status === 'cancelled' ? 'bg-red-100 text-red-800' :
-                    'bg-gray-100 text-gray-800'
-                  }`}>
-                    {order.status}
+                  <span className={`px-3 py-1 rounded-full text-sm ${getStatusColor(order.status)}`}>
+                    {order.status?.charAt(0).toUpperCase() + order.status?.slice(1)}
                   </span>
                 </div>
 

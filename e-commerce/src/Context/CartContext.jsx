@@ -63,12 +63,7 @@ function CartProvider({ children }) {
   // Load cart from currentUser when component mounts or user changes
   useEffect(() => {
 
-    console.log(currentUser?.email)
-
-
     if (currentUser?.cart) {
-
-      console.log(currentUser.cart)
 
       setCart(currentUser.cart)
     } else {
@@ -82,10 +77,10 @@ function CartProvider({ children }) {
     const updateCart = async () => {
 
       // if no user or user doesn't have id
-      if (!currentUser?.id) {
-        console.log("No user  fount")
-        return
-      }
+      // if (!currentUser?.id) {
+      //   console.log("No user  fount")
+      //   return
+      // }
       
       try {
         const response = await api.patch(`/users/${currentUser.id}`, { 
@@ -109,9 +104,9 @@ function CartProvider({ children }) {
   }, [cart, currentUser])
 
   // Debug cart changes
-  useEffect(() => {
-    console.log("Cart updated:", cart)
-  }, [cart])
+  // useEffect(() => {
+  //   console.log("Cart updated:", cart)
+  // }, [cart])
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>

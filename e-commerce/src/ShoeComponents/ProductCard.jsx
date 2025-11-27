@@ -3,6 +3,7 @@ import { CartContext } from "../Context/CartContext";
 import { AuthContext } from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { api } from "../Api/Api";
+import toast from "react-hot-toast";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate()
@@ -30,13 +31,15 @@ export default function ProductCard({ product }) {
   const addToCart = (e) => {
     e?.stopPropagation() // to Prevent navigation
     
+     toast.success("Added to Cart 🛒")
     if (added) {
+     
       navigate("/cart")
       return
     }
 
     if (!currentUser) {
-      alert("Please login to add items to cart")
+      toast.error("Please login to add items to cart")
       navigate("/login")
       return
     }
@@ -50,7 +53,7 @@ export default function ProductCard({ product }) {
     e?.stopPropagation() // to Prevent navigation
     
     if (!currentUser) {
-      alert("Please login to manage wishlist")
+      toast.error("Please login to manage wishlist")
       navigate("/login")
       return
     }
@@ -66,6 +69,10 @@ export default function ProductCard({ product }) {
         : [...oldWishlist, product]
 
       const updated = await api.patch(`/users/${user.id}`, { wishlist: newWishlist })
+
+      if(!exists)toast.success(`Added to Wishlist 💖`)
+      if(exists)toast.error(`Removed to Wishlist 💖`)
+      
 
       localStorage.setItem("user", JSON.stringify(updated.data))
       setIsWishListed(!exists)
