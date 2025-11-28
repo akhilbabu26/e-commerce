@@ -44,7 +44,7 @@ function CheckOutPage() {
         items: currentUserdata.cart,
         orderDate: new Date().toISOString(),
         orderId: `ORD-${Date.now()}`,
-        status: "confirmed",
+        status: "pending",
         totalAmount: currentUserdata.cart.reduce(
           (sum, item) => sum + (item.sale_price || 
             Math.round(item.original_price - (item.original_price * item.discount_percentage) / 100)
@@ -217,6 +217,12 @@ function CheckOutPage() {
           )}
         </Formik>
       )}
+      <button
+          className="flex items-center mt-3 gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+          onClick={() => navigate(-1)}
+         >
+          BACK
+      </button>
     </div>
   )
 }

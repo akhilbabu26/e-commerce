@@ -103,6 +103,62 @@
           "orderId": "ORD-1764238588511",
           "status": "delivered",
           "totalAmount": 17450
+        },
+        {
+          "name": "ajgkfgjl",
+          "number": "9876543",
+          "email": "fake@gmail.com",
+          "address": "restdyufiytrew",
+          "city": "kerala",
+          "pinCode": "76543",
+          "items": [
+            {
+              "product_id": "ADIDAS001",
+              "name": "SL 72 RS Shoes - Black/white",
+              "type": "Casual Retro Runner",
+              "color": "Black/White",
+              "original_price": 8999,
+              "sale_price": 7649,
+              "discount_percentage": 15,
+              "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/9b4b896bbb8f4c00a35714ae1a51e3b8_9366/SL_72_RS_Shoes_Black_JS3994_09_standard.jpg",
+              "description": "A faithful re-release of the classic 70s runner. Experience lightweight comfort and vintage style with a modern fit.",
+              "cost_price": 4500,
+              "id": "adid_001",
+              "quantity": 1
+            }
+          ],
+          "orderDate": "2025-11-28T07:58:14.958Z",
+          "orderId": "ORD-1764316694958",
+          "status": "shipped",
+          "totalAmount": 7649
+        },
+        {
+          "name": "ajgkfgjl",
+          "number": "98765433",
+          "email": "fake@gmail.com",
+          "address": "34yutyiiujtyht",
+          "city": "23423",
+          "pinCode": "awerter",
+          "items": [
+            {
+              "product_id": "ADIDAS002",
+              "name": "SL 722 RS Shoes - Brown Suede",
+              "type": "Casual Retro Runner",
+              "color": "Brown/Beige",
+              "original_price": 8999,
+              "sale_price": 7199,
+              "discount_percentage": 20,
+              "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3825f6aac1cd4b93b0553c90131f94c6_9366/SL_72_RS_Shoes_Brown_JS0744_09_standard.jpg",
+              "description": "The iconic SL 72 silhouette updated with premium brown suede and classic gum sole for a timeless look.",
+              "cost_price": 4500,
+              "id": "adid_002",
+              "quantity": 1
+            }
+          ],
+          "orderDate": "2025-11-28T08:08:48.626Z",
+          "orderId": "ORD-1764317328626",
+          "status": "cancelled",
+          "totalAmount": 7199
         }
       ],
       "wishlist": [],
@@ -115,7 +171,7 @@
       "password": "123456",
       "cPassword": "123456",
       "role": "User",
-      "isBlocked": true,
+      "isBlocked": false,
       "cart": [],
       "order": [],
       "wishlist": [],
@@ -908,21 +964,6 @@
       "description": "The bold silhouette of the 1000 is highlighted with vibrant green accents. A statement piece that is comfortable for daily wear.",
       "id": "nb_010",
       "cost_price": 5500,
-      "isActive": true,
-      "quantity": 1
-    },
-    {
-      "id": "cbb8",
-      "product_id": "ADIDAS011",
-      "name": "ajgkfgjl",
-      "type": "Casual Retro Runner",
-      "color": "White/Green",
-      "original_price": 6900,
-      "sale_price": 8000,
-      "discount_percentage": 10,
-      "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/802b1d08a67749c2a21d9ee6512f7ee0_9366/Dropset_3_Training_Shoes_Green_JR1676_HM8.jpg",
-      "description": "srtdfhygujklsdtfyugihgstdhfyj",
-      "cost_price": 6000,
       "isActive": true,
       "quantity": 1
     }

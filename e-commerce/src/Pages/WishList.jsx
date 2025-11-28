@@ -139,7 +139,7 @@ function WishList() {
             onClick={() => navigate("/")}
             className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
           >
-            Start Shopping
+            Continue Shopping
           </button>
         </div>
       ) : (

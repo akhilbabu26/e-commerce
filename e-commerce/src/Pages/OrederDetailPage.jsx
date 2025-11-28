@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import { api } from '../Api/Api';
+import toast from 'react-hot-toast';
 
 function OrdersPage() {
   const { currentUser, setCurrentUser } = useContext(AuthContext);
@@ -36,6 +37,7 @@ function OrdersPage() {
 
   const getStatusColor = (status) => {
     switch (status) {
+      case 'pending': return 'bg-yellow-100 text-yellow-800';
       case 'confirmed': return 'bg-green-100 text-green-800';
       case 'shipped': return 'bg-blue-100 text-blue-800';
       case 'delivered': return 'bg-purple-100 text-purple-800';
@@ -107,6 +109,16 @@ function OrdersPage() {
             ))}
           </div>
         )}
+
+
+               
+        <button
+          className="flex items-center mt-3 gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+          onClick={() => navigate(-1)}
+         >
+          BACK
+        </button>
+
       </div>
     </div>
   );

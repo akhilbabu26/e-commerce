@@ -1,33 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { api } from '../../Api/Api'
-
-// function UserInfo() {
-
-//   const [users, setAllUsers] = useState([])
-
-//   useEffect(()=>{
-//     const fetchAllUser = async ()=>{
-//       try{
-//         const res = await api.get("/users")
-//         setAllUsers(res?.data || []) 
-//       }
-//       catch(err){console.log(err)}
-//     }
-
-//     fetchAllUser()
-//   },[])
-
-//   const userOnly = users.find(x => x.role !== "Admin")
-
-//   console.log(userOnly)
-
-//   return (
-//     <div>UserInfo</div>
-//   )
-// }
-
-// export default UserInfo
-
 import React, { useEffect, useState } from 'react'
 import { api } from '../../Api/Api'
 
